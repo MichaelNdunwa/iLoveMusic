@@ -1,12 +1,19 @@
-html, 
-body {
+:root {
+    --text-primary: ;
+    --text-secondary: #a0a0a0;
+    --bg-color: #000;
+    --main-color: #EF9A19;
+    --sub-main-color: #fbda03 ;
+    --gradient: linear-gradient(270deg, var(--main-color) 10%, var(--sub-main-color) 100%);
+}
+html, body {
 	padding: 0;
 	margin: 0;
 	height: 100%;
 }
 
 #background {
-	background-color: #000;
+	background-color: var(--bg-color);
     background-image: url(../images/bg8.jpg);
     background-position: center;
     background-size: cover;
@@ -32,28 +39,29 @@ body {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #a0a0a0;
+    color:    var(--text-secondary);
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #a0a0a0;
+   color:    var(--text-secondary);
    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #a0a0a0;
+   color:    var(--text-secondary);
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #a0a0a0;
+   color:    var(--text-secondary);
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #a0a0a0;
+   color:    var(--text-secondary);
 }
 
 #inputContainer {
     width: 400px;
     padding: 45px;
     float: left;
-    border-right: 1px solid #999;
+    /* border-right: 1px solid #999; */
+    border-right: 1px solid var(--main-color);
 }
 
 #inputContainer h2 {
@@ -66,7 +74,7 @@ body {
     display: block;
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid #EF9A19; /* Default color */
+    border-bottom: 1px solid var(--main-color); /* Default color */
     height: 27px;
     line-height: 27px;
     width: 100%;
@@ -76,7 +84,7 @@ body {
 #inputContainer input[type="text"]:hover,
 #inputContainer input[type="email"]:hover,
 #inputContainer input[type="password"]:hover {
-    border-bottom: 1px solid #fbda03; /* yellow color on hover */
+    border-bottom: 1px solid var(--sub-main-color); /* yellow color on hover */
     transform: scale(1.1);
     cursor: text; /* Indicates input field is editable */
 }
@@ -85,15 +93,15 @@ body {
 #inputContainer input[type="email"]:focus,
 #inputContainer input[type="password"]:focus {
     outline: none; 
-    border-bottom: 1px solid #fbda03; 
-    /* border: 1px solid #fbda03;  */
+    border-bottom: 1px solid var(--sub-main-color); 
+    /* border: 1px solid var(--sub-main-color);  */
 }
 
 
 
 
 #inputContainer label {
-	/* color: #a0a0a0; */
+	/* color: var(--text-secondary); */
 	color: #fff;
     font-size: 13px;
     margin-top: 15px;
@@ -102,7 +110,7 @@ body {
 
 #inputContainer button {
 	background-color: transparent;
-    border: 2px solid #EF9A19;
+    border: 2px solid var(--main-color);
     border-radius: 250px;
     color: #fff;
     display: block;
@@ -115,11 +123,11 @@ body {
 
 #inputContainer button:hover {
     cursor: pointer;
-    color: #fbda03;
+    color: var(--sub-main-color);
     transform: scale(1.1);
-    box-shadow: 0 0 25px #fbda03, 
-                0 0 25px #fbda03,
-                0 0 25px #fbda03;
+    box-shadow: 0 0 25px var(--sub-main-color), 
+                0 0 25px var(--sub-main-color),
+                0 0 25px var(--sub-main-color);
 }
 
 
@@ -171,13 +179,13 @@ body {
 }
 
 #inputContainer .errorMessage {
-    color: #EF9A19;
+    color: var(--main-color);
     font-size: 12px;
     display: block;
 }
 
 span {
-    background-image: linear-gradient(270deg, #EF9A19 10%, #fbda03 100%);
+    background-image: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

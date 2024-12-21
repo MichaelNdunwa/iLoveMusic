@@ -19,7 +19,7 @@ function getInputValue($name)
 <html>
 
 <head>
-    <title>Welcome to Slotify!</title>
+    <title>Welcome to iLoveMusic</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/register.css">
 
