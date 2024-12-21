@@ -1,200 +1,229 @@
 :root {
-    --text-primary: ;
-    --text-secondary: #a0a0a0;
-    --bg-color: #000;
-    --main-color: #EF9A19;
-    --sub-main-color: #fbda03 ;
-    --gradient: linear-gradient(270deg, var(--main-color) 10%, var(--sub-main-color) 100%);
+  --text-primary: ;
+  --text-secondary: #a0a0a0;
+  --bg-color: #000;
+  --main-color: #ef9a19;
+  --sub-main-color: #fbda03;
+  --gradient: linear-gradient(
+    270deg,
+    var(--main-color) 10%,
+    var(--sub-main-color) 100%
+  );
 }
-html, body {
-	padding: 0;
-	margin: 0;
-	height: 100%;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
 #background {
-	background-color: var(--bg-color);
-    background-image: url(../images/bg8.jpg);
-    background-position: center;
-    background-size: cover;
-    display: table;
-    height: 100%;
-    width: 100%;
+  background-color: var(--bg-color);
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
 }
 
 #loginContainer * {
-	color: #fff;
-	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	font-weight: normal;
-	line-height: 1em;
-	box-sizing: border-box;
+  color: #fff;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+  line-height: 1em;
+  box-sizing: border-box;
 }
 
 #loginContainer {
-	width: 80%;
-	margin: 0 auto;
-	position: relative;
-	max-width: 1024px;
-    /* display: flex; */
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  max-width: 1024px;
+  /* display: flex; */
 }
 
-::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    var(--text-secondary);
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: var(--text-secondary);
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    var(--text-secondary);
-   opacity:  1;
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: var(--text-secondary);
+  opacity: 1;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    var(--text-secondary);
-   opacity:  1;
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: var(--text-secondary);
+  opacity: 1;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    var(--text-secondary);
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--text-secondary);
 }
-::-ms-input-placeholder { /* Microsoft Edge */
-   color:    var(--text-secondary);
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--text-secondary);
 }
 
 #inputContainer {
-    width: 400px;
-    padding: 45px;
-    float: left;
-    /* border-right: 1px solid #999; */
-    border-right: 1px solid var(--main-color);
+  width: 400px;
+  padding: 45px;
+  float: left;
+  /* border-right: 1px solid #999; */
+  border-right: 1px solid var(--main-color);
+
+  /* blur effect */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+#inputContainer:hover {
+  border-right: 1px solid var(--sub-main-color);
 }
 
 #inputContainer h2 {
-	text-align: center;
+  text-align: center;
 }
 
 #inputContainer input[type="text"],
 #inputContainer input[type="email"],
 #inputContainer input[type="password"] {
-    display: block;
-    background-color: transparent;
-    border: 0;
-    border-bottom: 1px solid var(--main-color); /* Default color */
-    height: 27px;
-    line-height: 27px;
-    width: 100%;
-    transition: border-color 0.3s ease; /* Smooth hover effect */
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--main-color); /* Default color */
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+  transition: border-color 0.3s ease; /* Smooth hover effect */
 }
 
 #inputContainer input[type="text"]:hover,
 #inputContainer input[type="email"]:hover,
 #inputContainer input[type="password"]:hover {
-    border-bottom: 1px solid var(--sub-main-color); /* yellow color on hover */
-    transform: scale(1.1);
-    cursor: text; /* Indicates input field is editable */
+  border-bottom: 1px solid var(--sub-main-color); /* yellow color on hover */
+  transform: scale(1.1);
+  cursor: text; /* Indicates input field is editable */
 }
 
 #inputContainer input[type="text"]:focus,
 #inputContainer input[type="email"]:focus,
 #inputContainer input[type="password"]:focus {
-    outline: none; 
-    border-bottom: 1px solid var(--sub-main-color); 
-    /* border: 1px solid var(--sub-main-color);  */
+  outline: none;
+  border-bottom: 1px solid var(--sub-main-color);
+  /* border: 1px solid var(--sub-main-color);  */
 }
 
-
-
-
 #inputContainer label {
-	/* color: var(--text-secondary); */
-	color: #fff;
-    font-size: 13px;
-    margin-top: 15px;
-    display: block;
+  /* color: var(--text-secondary); */
+  color: #fff;
+  font-size: 13px;
+  margin-top: 15px;
+  display: block;
 }
 
 #inputContainer button {
-	background-color: transparent;
-    border: 2px solid var(--main-color);
-    border-radius: 250px;
-    color: #fff;
-    display: block;
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin: 20px auto;
-    height: 41px;
-    width: 100%;
+  background-color: transparent;
+  border: 2px solid var(--main-color);
+  border-radius: 250px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 20px auto;
+  height: 41px;
+  width: 100%;
 }
 
 #inputContainer button:hover {
-    cursor: pointer;
-    color: var(--sub-main-color);
-    transform: scale(1.1);
-    box-shadow: 0 0 25px var(--sub-main-color), 
-                0 0 25px var(--sub-main-color),
-                0 0 25px var(--sub-main-color);
+  cursor: pointer;
+  color: var(--sub-main-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--sub-main-color), 0 0 25px var(--sub-main-color),
+    0 0 25px var(--sub-main-color);
 }
 
-
 .hasAccountText small {
-	font-weight: bold;
-    font-size: 12px;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .hasAccountText {
-	text-align: center;
+  text-align: center;
 }
 
 .hasAccountText:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #registerForm,
 #loginForm {
-	display: none;
+  display: none;
 }
 
 #loginText {
-    padding: 45px;
-    display: table-cell;
-    /* blur effect */
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px); 
+  padding: 45px;
+  display: table-cell;
+  /* blur effect */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 #loginText h1 {
-    /* color: linear-gradient(270deg, #df8908 10%, #03f3fb 100%); */
-    font-size: 60px;
-    /* font-weight: bold; */
+  /* color: linear-gradient(270deg, #df8908 10%, #03f3fb 100%); */
+  font-size: 60px;
+  /* font-weight: bold; */
 }
 
 #loginText h2 {
-    margin: 35px 0;
+  margin: 35px 0;
 }
 
 #loginText ul {
-    padding: 0;
+  padding: 0;
 }
 
 #loginText li {
-    font-size: 20px;
-    list-style-type: none;
-    padding: 5px 30px;
-    background: url(../images/icons/musicsymbol.png) no-repeat 0 0;
+  font-size: 20px;
+  list-style-type: none;
+  padding: 5px 30px;
+  background: url(../images/icons/musicsymbol.png) no-repeat 0 0;
 }
 
 #inputContainer .errorMessage {
-    color: var(--main-color);
-    font-size: 12px;
-    display: block;
+  color: var(--main-color);
+  font-size: 12px;
+  display: block;
 }
 
 span {
-    background-image: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-weight: bold;
+  background-image: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: bold;
 }
 
-
-
-
-
-
+@media only screen and (max-width: 768px) {
+    #loginContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    #loginText {
+      order: 1; /* Move #loginText to the top */
+      width: 100%; /* Make #loginText full-width */
+    }
+  
+    #inputContainer {
+      order: 2; /* Move #inputContainer below #loginText */
+      width: 100%; /* Make #inputContainer full-width */
+      padding: 20px; /* Adjust padding as needed */
+      float: none;
+      border-right: none; /* Remove border-right */
+    }
+  }
+  
