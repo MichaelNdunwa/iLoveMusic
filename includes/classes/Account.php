@@ -17,12 +17,12 @@ class Account {
             return false;
         }
     }
-    public function register($un, $fn, $ln, $em, $em2, $pw, $pw2) {
+    public function register($un, $fn, $ln, $em, $pw, $pw2) {
         // Validate credentials:
         $this->validateUsername($un);
         $this->validateFirstName($fn);
         $this->validateLastName($ln);
-        $this->validateEmail($em, $em2);
+        $this->validateEmail($em);
         $this->validatePassword($pw, $pw2);
 
         if(empty($this->errorArray) == true) {
@@ -38,6 +38,8 @@ class Account {
         }
         return "<span class='errorMessage'>$error</span>";
     }
+
+    // Insert user deatils to mysql db:
     private function insertUserDetails($un, $fn, $ln, $em, $pw) {
         $encryptedPw = md5($pw);
         $profilePic = "assets/images/profile-pics/michael.jpg";
@@ -50,7 +52,6 @@ class Account {
             array_push($this->errorArray, Constants::$usernameCharacters);
             return;
         }
-        // $checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users='$un'");
         $checkUsernameQuery = mysqli_query($this->con, "SELECT username FROM users WHERE username='$un'");
         if (mysqli_num_rows($checkUsernameQuery) != 0) {
             array_push($this->errorArray, Constants::$usernameTaken);
@@ -69,22 +70,34 @@ class Account {
             return;
         }
     }
-    private function validateEmail($em, $em2) {
-        if($em != $em2) {
-            array_push($this->errorArray, Constants::$emailsDoNotMatch);
-            return;
-        }
+    // private function validateEmail($em, $em2) {
+    //     if($em != $em2) {
+    //         array_push($this->errorArray, Constants::$emailsDoNotMatch);
+    //         return;
+    //     }
+    //     if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+    //         array_push($this->errorArray, Constants::$emailInvalid);
+    //         return;
+    //     }
+    //     $checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
+    //     if (mysqli_num_rows($checkEmailQuery) != 0) {
+    //         array_push($this->errorArray, Constants::$emailTaken);
+    //         return;
+    //     }
+    // }
+
+    private function validateEmail($em) {
         if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
             array_push($this->errorArray, Constants::$emailInvalid);
             return;
         }
-        // $checkEmailQuery = mysqli_query($this->con, "SELECT username FROM users='$em'");
         $checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
         if (mysqli_num_rows($checkEmailQuery) != 0) {
             array_push($this->errorArray, Constants::$emailTaken);
             return;
         }
     }
+
     private function validatePassword($pw, $pw2) {
         if($pw != $pw2) {
             array_push($this->errorArray, Constants::$passwordsDoNoMatch);
