@@ -10,12 +10,14 @@
     var(--sub-main-color) 100%
   );
 }
+
 html,
 body {
   padding: 0;
   margin: 0;
   height: 100%;
 }
+
 
 #background {
   background-color: var(--bg-color);
@@ -206,24 +208,72 @@ span {
   font-weight: bold;
 }
 
+
+  
+
 @media only screen and (max-width: 768px) {
-    #loginContainer {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    #loginText {
-      order: 1; /* Move #loginText to the top */
-      width: 100%; /* Make #loginText full-width */
-    }
-  
-    #inputContainer {
-      order: 2; /* Move #inputContainer below #loginText */
-      width: 100%; /* Make #inputContainer full-width */
-      padding: 20px; /* Adjust padding as needed */
-      float: none;
-      border-right: none; /* Remove border-right */
-    }
+  /* @media (max-width:767.98px) { */
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
   }
-  
+
+  #background {
+    background-color: var(--bg-color);
+    background-image: url(../images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    /* display: table; */
+    /* flex-direction: column-reverse; */
+    height: 100%;
+    width: 100%;
+  }
+
+  #loginContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 auto; */
+    /* padding-bottom: 5px; */
+    /* padding: 20px; */
+  }
+
+  #loginText {
+    order: 1; /* Move #loginText to the top */
+    width: 100%; /* Make #loginText full-width */
+    padding: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
+  }
+
+  #loginText h1 {
+  /* color: linear-gradient(270deg, #df8908 10%, #03f3fb 100%); */
+  font-size: 30px;
+  /* font-weight: bold; */
+}
+#loginText h2 {
+  margin: 2px 0px;
+  font-size: 12px;
+}
+#loginText li {
+  font-size: 10px;
+}
+
+  #inputContainer {
+    order: 2;
+    width: 100%;
+    /* padding: 20px; */
+    float: none;
+    border-right: none;
+    height: 100%;
+    margin: 0px;
+    padding-top: 0px;
+    padding: 20px;
+  }
+
+  #inputContainer:hover {
+  border-right: none;
+}
+}

@@ -8,13 +8,16 @@ if (isset($_SESSION['userLoggedIn'])) {
 }
 ?>
 
-<html>
-    <head>
-        <title>Welcome to iLoveMusic</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to iLoveMusic</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
-    <body>
+</head>
+ <body>
         <div id="nowPlayingBarContainer">
         <div id="nowPlayingBar">
             <div id="nowPlayingLeft"></div>
@@ -25,29 +28,41 @@ if (isset($_SESSION['userLoggedIn'])) {
                             <img src="assets/images/icons/shuffle.png" alt="Shuffle">
                         </button>
 
-                        <button class="controlButton shuffle" title="Shuffle button">
-                            <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                        <button class="controlButton previous" title="Previous button">
+                            <img src="assets/images/icons/previous.png" alt="previous">
                         </button>
 
 
-                        <button class="controlButton shuffle" title="Shuffle button">
-                            <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                        <button class="controlButton play" title="Play button">
+                            <img src="assets/images/icons/play.png" alt="Play">
                         </button>
 
-
-                        <button class="controlButton shuffle" title="Shuffle button">
-                            <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                        <button class="controlButton pause" title="Pause button" style="display: none;">
+                            <img src="assets/images/icons/pause.png" alt="Pause">
                         </button>
 
-
-                        <button class="controlButton shuffle" title="Shuffle button">
-                            <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                        <button class="controlButton next" title="Next button">
+                            <img src="assets/images/icons/next.png" alt="Next">
                         </button>
 
-
+                        <button class="controlButton repeat" title="Repeat button">
+                            <img src="assets/images/icons/repeat.png" alt="Repeat">
+                        </button>
 
                     </div>
+
+                    <div class="playbackBar">
+                        <span class="progressTime current">0.00</span>
+                        <div class="progressBar">
+                            <div class="progressBarBg">
+                                <div class="progress"></div>
+                            </div>
+                        </div>
+                        <span class="progressTime remaning">0.00</span>
+                    </div>
                 </div>
+
+
             </div>
             <div id="nowPlayingRight"></div>
         </div>
