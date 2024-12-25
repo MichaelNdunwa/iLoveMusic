@@ -4,11 +4,7 @@
   --bg-color: #000;
   --main-color: #ef9a19;
   --sub-main-color: #fbda03;
-  --gradient: linear-gradient(
-    270deg,
-    var(--main-color) 10%,
-    var(--sub-main-color) 100%
-  );
+  --gradient: linear-gradient(270deg, var(--main-color) 10%, var(--sub-main-color) 100%);
 }
 
 html,
