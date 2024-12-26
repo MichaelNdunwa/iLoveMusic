@@ -1,11 +1,38 @@
 var currentlyPlayList = [];
 var audioElement;
+var mouseDown = false;
+
+// function formatTime(seconds) {
+//     var time = Math.round(seconds);
+//     var minutes = Math.floor(time / 60);
+//     var seconds = time - minutes * 60;
+//     var extraZero = (seconds < 10) ? "0" : "";
+//     return minutes + ":" + extraZero + seconds;
+// }
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+}
+function updateTimeProgessBar(audio) {
+    $(".progressTime.current").text(formatTime(audio.currentTime));
+    // $(".progressTime.remaining").text(formatTime(audio.duration - audio.currentTime)); // this is to display remaining time, I don't want that.
+    var progress = audio.currentTime / audio.duration * 100;
+    $(".playbackBar .progress").css("width", progress + "%");
+    $(".playbackBar .progressNode").css("left", progress + "%");
+}
 function Audio() {
     this.currentlyPlaying;
     this.audio = document.createElement('audio');
 
     this.audio.addEventListener("canplay", function() {
-        $(".progressTime.remaining").text(this.duration);
+        var duration = formatTime(this.duration);
+        $(".progressTime.remaining").text(duration);
+    });
+    this.audio.addEventListener("timeupdate", function() {
+        if(this.duration) {
+            updateTimeProgessBar(this);
+        }
     });
     this.setTrack = function(track) {
         this.currentlyPlaying = track;
@@ -16,5 +43,8 @@ function Audio() {
     }
     this.pause = function() {
         this.audio.pause();
+    }
+    this.setTime = function(seconds) {
+        this.audio.currentTime = seconds;
     }
 }

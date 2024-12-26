@@ -124,6 +124,7 @@ body {
   height: 4px;
   width: 100%;
   border-radius: 2px;
+  position: relative;
 }
 
 .progress {
@@ -131,11 +132,36 @@ body {
   height: 4px;
   width: 0;
   border-radius: 2px;
+  position: relative;
+}
+
+.progressBar:hover .progress {
+  background-color: #ef9a19;
+}
+.progressNode {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  margin-left: -10px; 
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  /* opacity: 1; */
+  visibility: hidden;
+  /* transition: opacity 0.2s; */
+}
+
+.progressBar:hover .progressNode {
+    /* opacity: 1; */
+    visibility: visible;
 }
 
 .playbackBar .progressBar {
   margin-top: 3px;
 }
+
 
 #nowPlayingLeft .albumArtwork {
   height: 100%;
