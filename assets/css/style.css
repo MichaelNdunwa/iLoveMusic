@@ -254,6 +254,7 @@ body {
 .navItem:hover {
   border-left: 4px solid #ef9a19;
   filter: drop-shadow(-40px 0px 10px #ef9a19);
+  cursor: pointer;
 }
 
 .navItemLink i {
@@ -302,6 +303,7 @@ body {
 .navItem:hover i,
 .navItemLink:hover {
   color: #ef9a19;
+  cursor: pointer;
 }
 
 #mainViewContainer {

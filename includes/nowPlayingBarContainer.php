@@ -148,11 +148,10 @@ $jsonArray = json_encode($resultArray);
                 $(".albumLink img").attr("src", album.artworkPath);
             });
             audioElement.setTrack(track);
-            playSong();
+            if (play) {
+                playSong();
+            }
         });
-        if (play) {
-            audioElement.play();
-        }
     }
     function playSong() {
         if (audioElement.audio.currentTime == 0) {
