@@ -26,9 +26,11 @@ class Song
         $this->path = $this->mysqliData['path'];
     }
 
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
+    }
+    public function getId() {
+        return $this->id;
     }
     public function getArtist()
     {

@@ -109,7 +109,7 @@ $jsonArray = json_encode($resultArray);
             currentIndex = shufflePlaylist.indexOf(audioElement.currentlyPlaying.id);
         } else {
             // deactive and go back to regular playlist
-            currentIndex = currentlyPlaying.indexOf(audioElement.currentlyPlaying.id);
+            currentIndex = currentPlaylist.indexOf(audioElement.currentlyPlaying.id);
 
         }
     }
