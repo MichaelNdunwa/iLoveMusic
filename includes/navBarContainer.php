@@ -26,7 +26,7 @@
                 <span role="link" tabindex="0" onclick="openPage('contact.php')" class="navItemLink"><i class="fa-solid fa-paper-plane"></i>Contact</span>
             </div>
             <div id="logout" class="navItem">
-                <span role="link" tabindex="0" onclick="openPage('logout.php')" class="navItemLink"><i class="fa-solid fa-right-from-bracket"></i>Fuck off looser</span>
+                <span role="link" tabindex="0" onclick="openPage('logout.php')" class="navItemLink"><i class="fa-solid fa-right-from-bracket"></i>I dare you to logout</span>
             </div>
         </div>
     </nav>

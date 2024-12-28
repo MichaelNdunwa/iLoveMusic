@@ -18,6 +18,7 @@ function openPage(url) {
     history.pushState(null, null, url);
 }
 
+
 // function formatTime(seconds) {
 //     var time = Math.round(seconds);
 //     var minutes = Math.floor(time / 60);

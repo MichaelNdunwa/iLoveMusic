@@ -1,30 +1,35 @@
-<?php include("includes/includedFiles.php");
+<?php
+include("includes/includedFiles.php");
+
 if(isset($_GET['id'])) {
-    $albumId = $_GET['id'];
+    $artistId = $_GET['id'];
 } else {
     header("Location: index.php");
 }
-$album = new Album($con, $albumId);
-$artist = $album->getArtist();
+
+$artist = new Artist($con, $artistId);
 ?>
 
-<div class="entityInfo">
-    <div class="leftSection">
-        <img src="<?php echo $album->getArtworkPath(); ?>">
-    </div>
-    <div class="rightSection">
-        <h2><?php echo $album->getTitle(); ?></h2>
-        <p>By <?php echo $artist->getName(); ?></p>
-        <p><?php echo $album->getNumberOfSongs(); ?> <?php echo ($album->getNumberOfSongs() > 1) ? "songs" : "song"; ?></p>
+<div class="entityInfo borderbottom">
+    <div class="centerSection">
+        <div class="artistInfo">
+            <h1 class="artistName"><?php echo $artist->getName(); ?></h1>
+            <div class="headerButtons">
+                <button class="button orange">PLAY</button>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="tracklistContainer">
+<div class="tracklistContainer borderbottom">
     <ul class="tracklist">
         <?php
-        $songIdArray = $album->getSongIds();
+        $songIdArray = $artist->getSongIds();
         $i = 1;
         foreach($songIdArray as $songId) {
+            if($i > 5) {
+                break;
+            }
             $albumSong = new Song($con, $songId);
             $albumArtist = $albumSong->getArtist();
 
@@ -57,5 +62,3 @@ $artist = $album->getArtist();
         </script>
     </ul>
 </div>
-
-<!-- <?php include("includes/footer.php"); ?> -->
