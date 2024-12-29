@@ -47,11 +47,17 @@ $artist = new Artist($con, $artistId);
             }
             $albumSong = new Song($con, $songId);
             $albumArtist = $albumSong->getArtist();
+            // I added song image
+            $albumImage = $albumSong->getAlbum()->getArtworkPath();
 
             echo "<li class='tracklistRow'>
                 <div class='trackCount'>
                     <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
                     <span class='trackNumber'>$i</span>
+                </div>
+
+                <div class='trackImage'>
+                    <img class='songImage' src=\"" . $albumImage . "\"> 
                 </div>
 
                 <div class='trackInfo'>
