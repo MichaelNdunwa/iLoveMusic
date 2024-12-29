@@ -12,6 +12,11 @@
             $artist = mysqli_fetch_array($artistQuery);
             return $artist['name'];
         }
+        public function getImage() {
+            $artistQuery = mysqli_query($this->con,"SELECT artistsImagePath FROM artists WHERE id='$this->id'");
+            $artist = mysqli_fetch_array($artistQuery);
+            return $artist['artistsImagePath'];
+        }
         public function getSongIds() {
             $query = mysqli_query($this->con, "SELECT id FROM songs WHERE artist='$this->id' ORDER BY plays DESC");
             $array = array();

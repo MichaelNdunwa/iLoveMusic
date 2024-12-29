@@ -483,8 +483,28 @@ body {
   margin-bottom: 7px;
 }
 
-.centerSection .artistInfo {
+/* .centerSection .artistInfo {
   text-align: center;
+} */
+.centerSection .artistInfo {
+    display: flex;
+    align-items: center;
+}
+.centerSection .artistImage {
+    margin-right: 100px; /* add some space between image and text */
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+}
+.centerSection .artistDetails {
+    /*flex: 1;*/ /* take up remaining space */
+    text-align: center; /* center text horizontally */
+}
+.centerSection .artistDetails .artistName {
+  font-weight: 900;
+  font-size: 100px; 
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .button {
@@ -506,3 +526,16 @@ body {
   font-weight: bold;
 }
 
+.borderBottom {
+  border-bottom: 1px solid #ef9a19;
+  margin-bottom: 20px;
+}
+
+/* .tracklistContainer h2,
+.gridViewContainer h2 {
+  text-align: center;
+} */
+
+[role="link"] {
+  cursor: pointer;
+}
