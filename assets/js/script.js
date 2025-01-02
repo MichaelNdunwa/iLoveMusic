@@ -7,8 +7,12 @@ var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
 var userLoggedIn;
+var timer;
 
-function openPage(url) {
+ function openPage(url) {
+    if(timer != null) {
+        clearTimeout(timer);
+    }
     if(url.indexOf("?") == -1) {
         url = url + "?";
     }
@@ -46,6 +50,7 @@ function updateVolumeProgressBar(audio) {
 function playFirstSong() {
     setTrack(tempPlaylist[0], tempPlaylist, true);
 }
+
 function Audio() {
     this.currentlyPlaying;
     this.audio = document.createElement('audio');
@@ -80,3 +85,4 @@ function Audio() {
         this.audio.currentTime = seconds;
     }
 }
+

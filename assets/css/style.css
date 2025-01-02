@@ -508,7 +508,7 @@ body {
 }
 .centerSection .artistDetails .artistName {
   font-weight: 900;
-  font-size: 100px;
+  font-size: 80px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
@@ -556,4 +556,255 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 5px;
+}
+
+.searchContainer {
+  background-color: #282828;
+  padding: 10px 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid #ef9a19;
+}
+
+.searchContainer h4 {
+  margin: 0px;
+  font-weight: 100;
+}
+
+.searchContainer .searchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  /* font-size: 60px; */
+  font-size: 20px;
+  outline: none;
+  letter-spacing: 2px;
+}
+
+.searchResultRow {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.searchResultRow .artistImage {
+  width: 120px;
+  height: 120px;
+}
+.searchResultRow .artistImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.searchResultRow .artistName {
+  margin-top: 5px;
+}
+.searchResultRow .artistName span {
+  color: #fff;
+}
+.searchResultRow:hover {
+  transform: scale(1.1);
+}
+
+.noResults {
+  margin: 15px;
+  display: block;
+}
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog-container {
+  background-color: #282828;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-title {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.dialog-message {
+  color: #b3b3b3;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-cancel {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #b3b3b3;
+}
+
+.button-cancel:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button-logout {
+  background-color: #ef9919b5;
+  color: white;
+}
+
+.button-logout:hover {
+  background-color: #ef9a19;
+  transform: scale(1.05);
+}
+
+.dialog-overlay.active {
+  display: flex;
+}
+
+
+
+/* Style Contact Section */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+} */
+
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1f242d;
+} */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact h2 {
+  font-size: 30px;
+  color: #ededed;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact form {
+  width: 500px;
+  text-align: center;
+}
+
+form .input-box {
+  display: flex;
+  justify-content: space-between; /*I won't add this part */
+}
+
+.input-box .input-field {
+  width: 48.5%;
+}
+
+.field .item {
+  width: 100%;
+  padding: 18px;
+  background: transparent;
+  border: 1px solid #a0a0a0;
+  outline: none;
+  border-radius: 6px;
+  color: #ededed;
+  margin: 12px 0;
+}
+
+.field .item:focus {
+  border: 1px solid #ef9a19;
+}
+
+.field.error .item {
+  border-color: #d93025;
+}
+
+.field .item::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.field .error-txt {
+  font-size: 14.5px;
+  color: #d93025;
+  text-align: left;
+  margin: -5px 0 10px;
+  display: none;
+}
+
+.field.error .error-txt {
+  display: block;
+} 
+
+form .textarea-field .item {
+  resize: none;
+}
+
+form .textarea-field .error-txt {
+  margin-top: -10px;
+}
+
+form button {
+  padding: 12px 32px;
+}
+
+form button {
+  padding: 12px 32px;
+  background: #ef9a19;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ef9a19;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+form button:hover {
+  box-shadow: none;
+}
+
+
+/* Styling for sweetalert2 */
+.custom-border {
+  border: 1px solid #FFA500 !important; /* Orange border */
+  border-radius: 15px !important; /* Rounded corners */
 }

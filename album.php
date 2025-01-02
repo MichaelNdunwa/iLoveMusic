@@ -57,5 +57,3 @@ $artist = $album->getArtist();
         </script>
     </ul>
 </div>
-
-<!-- <?php include("includes/footer.php"); ?> -->
