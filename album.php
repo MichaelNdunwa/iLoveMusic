@@ -28,7 +28,7 @@ $artist = $album->getArtist();
             $albumSong = new Song($con, $songId);
             $albumArtist = $albumSong->getArtist();
 
-            echo "<li class='tracklistRow'>
+            echo "<li class='tracklistRow' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
                 <div class='trackCount'>
                     <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
                     <span class='trackNumber'>$i</span>
@@ -38,11 +38,7 @@ $artist = $album->getArtist();
                     <span class='trackName'>" .$albumSong->getTitle(). "</span>
                     <span class='artistkName'>" .$albumArtist->getName(). "</span>
                 </div>
-
-                <div class='trackOptions'>
-                    <img class='optionsButton' src='assets/images/icons/more.png'>
-                </div>
-
+                
                 <div class='trackDuration'>
                     <span class='duration'>" . $albumSong->getDuration(). "</span>
                 </div>
